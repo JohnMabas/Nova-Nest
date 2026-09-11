@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nest-bg: #21433d;
+  --nest-mint: #f4fffb;
+  --nest-tiffany: #9ecabc;
+  --nest-feld: #566f6b;
+  --nest-sun: #ffcc49;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--nest-mint);
+  background: var(--nest-bg);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-5 md:px-8 xl:px-0;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-btn-fill px-[42px] py-4 text-base font-semibold text-nest-bg transition hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-primary-sm {
+    @apply inline-flex items-center justify-center rounded-lg bg-btn-fill px-[42px] py-3 text-base font-semibold text-nest-bg transition hover:brightness-110 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-xl border border-nest-tiffany px-[42px] py-4 text-base font-semibold text-nest-tiffany transition hover:bg-nest-tiffany/10 active:scale-[0.98];
+  }
+
+  .btn-outline-sm {
+    @apply inline-flex items-center justify-center rounded-lg border border-nest-tiffany px-[42px] py-3 text-base font-semibold text-nest-tiffany transition hover:bg-nest-tiffany/10 active:scale-[0.98];
+  }
+
+  .btn-arrow {
+    @apply flex h-10 w-10 items-center justify-center rounded-full bg-btn-fill text-nest-bg transition hover:brightness-110 disabled:opacity-50;
+  }
+
+  .btn-arrow-muted {
+    @apply flex h-10 w-10 items-center justify-center rounded-full bg-btn-fill text-nest-bg opacity-50 transition hover:opacity-80 disabled:opacity-30;
+  }
+
+  .section-title {
+    @apply text-[28px] font-semibold leading-[130%] text-nest-mint md:text-[32px];
+  }
+
+  .section-lead {
+    @apply text-base font-normal leading-[160%] text-nest-tiffany md:text-lg;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    background-image: url("/assets/noise.png");
+    background-repeat: repeat;
+    background-size: 180px 180px;
+  }
+}
